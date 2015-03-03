@@ -15,6 +15,11 @@ def myFunct():
     nextEvent = "???"
     return nextEvent
     
+def myFunct():
+    print "do something ..."
+    nextEvent = "???"
+    return nextEvent
+    
 def Init():
     print "init"
     nextEvent = "init_done"
@@ -25,6 +30,19 @@ def decollage():
     #corps de la fonction
     nextEvent = "decollage_done"
     return nextEvent 
+
+def exploration():
+    print "turn until detect"
+    if () :
+        nextEvent = "objet"
+    elif ():
+    return nextEvent
+    
+def myFunct():
+    print "do something ..."
+    nextEvent = "???"
+    return nextEvent
+    
 
 # Main 
 if __name__== "__main__":
