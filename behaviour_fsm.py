@@ -10,17 +10,8 @@ f = fsm.fsm()   # defines finite state machine
 
 
 # FSM functions 
-def myFunct():
-    print "do something ..."
-    nextEvent = "???"
-    return nextEvent
     
-def myFunct():
-    print "do something ..."
-    nextEvent = "???"
-    return nextEvent
-    
-def Init():
+def init():
     print "init"
     nextEvent = "init_done"
     return nextEvent
@@ -33,16 +24,30 @@ def decollage():
 
 def exploration():
     print "turn until detect"
-    if () :
-        nextEvent = "objet"
+    if () : 
+        nextEvent = "atterrissage d'urgence" 
+    elif () :
+        nextEvent = "objet detecte"
     elif ():
     return nextEvent
     
+def objetDetecte():
+    print "do something ..."
+    if ():
+        nextEvent = "confirmation manuelle"
+    else ():
+        nextEvent = "infirmation manuelle"
+    return nextEvent
+
 def myFunct():
     print "do something ..."
     nextEvent = "???"
     return nextEvent
     
+def myFunct():
+    print "do something ..."
+    nextEvent = "???"
+    return nextEvent    
 
 # Main 
 if __name__== "__main__":
@@ -59,7 +64,7 @@ if __name__== "__main__":
     f.add_event ("init faite")
     f.add_event ("decollage fait")
     f.add_event ("zone de patrouille atteinte")
-    f.add_event ("atterisage d'urgence")
+    f.add_event ("atterissage d'urgence")
     f.add_event ("retour point de depart")
     f.add_event ("objet detecte")
     f.add_event ("confirmation manuelle")
