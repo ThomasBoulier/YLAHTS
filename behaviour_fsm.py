@@ -32,16 +32,41 @@ if __name__== "__main__":
     # init FSM
     f.add_state ("init")    
     f.add_state ("decollage")
-    f.add_state ("???")
+    f.add_state ("exploration")
+    f.add_state ("objet detecte")
+    f.add_state ("destruction de nid")
+    f.add_state ("rtl")
+    f.add_state ("atterrissage")
 
-    f.add_event ("init_done")
-    f.add_event ("decollage_done")
-   
-    f.add_transition ("??","??","??",myFunct);
+    f.add_event ("init faite")
+    f.add_event ("decollage fait")
+    f.add_event ("zone de patrouille atteinte")
+    f.add_event ("atterisage d'urgence")
+    f.add_event ("retour point de depart")
+    f.add_event ("objet detecte")
+    f.add_event ("confirmation manuelle")
+    f.add_event ("infirmation manuelle")
+    f.add_event ("retour a l'exploration")
+    f.add_event ("attaque du nid")
+    f.add_event ("decollage fait")
+    f.add_event ("nid detruit")
+    f.add_event ("arrivee au point de depart")
+    f.add_event ("fin de mission")
+
+    f.add_transition ("state1","state2","event",myFunct);
+    f.add_transition ("state1","state2","event",myFunct);
+    f.add_transition ("state1","state2","event",myFunct);
+    f.add_transition ("state1","state2","event",myFunct);
+    f.add_transition ("state1","state2","event",myFunct);
+    f.add_transition ("state1","state2","event",myFunct);
+    f.add_transition ("state1","state2","event",myFunct);
+    f.add_transition ("state1","state2","event",myFunct);
+    f.add_transition ("state1","state2","event",myFunct);
+    f.add_transition ("state1","state2","event",myFunct);
     
     # FSM starting state and event 
-    f.set_state ("??")
-    f.set_event ("??")
+    f.set_state ("init")
+    f.set_event ("init faite")
 
 
     # run FSM
