@@ -13,13 +13,13 @@ f = fsm.fsm()   # defines finite state machine
     
 def init():
     print "init"
-    nextEvent = "init_done"
+    nextEvent = "init faite"
     return nextEvent
     
 def decollage():
     print "decollage"
     #corps de la fonction
-    nextEvent = "decollage_done"
+    nextEvent = "decollage fait"
     return nextEvent 
 
 def exploration():
@@ -28,7 +28,8 @@ def exploration():
         nextEvent = "atterrissage d'urgence" 
     elif () :
         nextEvent = "objet detecte"
-    elif ():
+    else ():
+        nextEvent = "retour point de depart"
     return nextEvent
     
 def objetDetecte():
@@ -39,16 +40,21 @@ def objetDetecte():
         nextEvent = "infirmation manuelle"
     return nextEvent
 
-def myFunct():
-    print "do something ..."
-    nextEvent = "???"
+def destruction():
+    print "BOOOM"
+    nextEvent = "retour point de depart"
     return nextEvent
     
-def myFunct():
-    print "do something ..."
-    nextEvent = "???"
+def rtl():
+    print "go back home"
+    nextEvent = "arrivee point de depart"
     return nextEvent    
-
+    
+def atterissage():
+    print "landing"
+    nextEvent = "fin de mission"
+    return nextEvent        
+    
 # Main 
 if __name__== "__main__":
 
@@ -76,16 +82,16 @@ if __name__== "__main__":
     f.add_event ("arrivee au point de depart")
     f.add_event ("fin de mission")
 
-    f.add_transition ("state1","state2","event",myFunct);
-    f.add_transition ("state1","state2","event",myFunct);
-    f.add_transition ("state1","state2","event",myFunct);
-    f.add_transition ("state1","state2","event",myFunct);
-    f.add_transition ("state1","state2","event",myFunct);
-    f.add_transition ("state1","state2","event",myFunct);
-    f.add_transition ("state1","state2","event",myFunct);
-    f.add_transition ("state1","state2","event",myFunct);
-    f.add_transition ("state1","state2","event",myFunct);
-    f.add_transition ("state1","state2","event",myFunct);
+    f.add_transition ("init","decollage","init faite",decollage);
+    f.add_transition ("decollage","exploration","decollage fait",exploration);
+    f.add_transition ("exploration","objet detecte","objet detecte",objetDetecte);
+    f.add_transition ("objet detecte","exploration","infirmation manuelle",explore);
+    f.add_transition ("exploration","rtl","retour point de depart",rtl);
+    f.add_transition ("exploration","atterrissage","atterrissage d'urgence",atterrissage);
+    f.add_transition ("objet detecte","destruction de nid","confirmation manuelle",destruction);
+    f.add_transition ("destruction de nid","rtl","nid detruit",rtl);
+    f.add_transition ("rtl","atterrissage","arrivee au point de depart",atterrissage);
+    f.add_transition ("atterrissage","fin de mission","fin de mission",finMission);
     
     # FSM starting state and event 
     f.set_state ("init")
@@ -95,7 +101,7 @@ if __name__== "__main__":
     # run FSM
     #fonctions d'init à appeler ici.
 
-    while (f.curState != "??"):   # wait for last state to occur
+    while (f.curState != "fin de mission"):   # wait for last state to occur
         funct = f.run ()
         newEvent = funct()
         print "New Event : ",newEvent
