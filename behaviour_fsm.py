@@ -34,6 +34,7 @@ def exploration():
     
 def objetDetecte():
     print "do something ..."
+    Script.ChangeMode(LOITER)
     if ():
         nextEvent = "confirmation manuelle"
     else ():
@@ -46,14 +47,16 @@ def destruction():
     return nextEvent
     
 def rtl():
+    Script.ChangeMode('RTL')
     print "go back home"
     nextEvent = "arrivee point de depart"
     return nextEvent    
     
 def atterissage():
+    Script.ChangeMode('LAND')
     print "landing"
     nextEvent = "fin de mission"
-    return nextEvent        
+    return nextEvent
     
 # Main 
 if __name__== "__main__":
