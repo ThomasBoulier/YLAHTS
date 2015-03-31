@@ -29,7 +29,7 @@ def exploration():
     while nextEvent =! "RAS"
         if (Script.getParam("battery_remaining") < 0.15) : 
             nextEvent = "atterrissage d'urgence" 
-        elif (side.IsThereAnObject()) :
+        elif (side.isThereAnObject()) :
             nextEvent = "objet detecte"
         elif (Script.getParam("battery_remaining") < 0.30):
             nextEvent = "retour point de depart"
