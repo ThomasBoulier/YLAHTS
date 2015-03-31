@@ -6,7 +6,10 @@ import numpy as np
 
 def isThereAnObject:
   liste = np.zeros(24)
-  b = objectInCam()
+  b = objectFrontCam()
   liste.append(b)
   rate = liste.count(True)/24
   return (rate > 0.8)
+  
+def objectFrontCam :
+  return ()
