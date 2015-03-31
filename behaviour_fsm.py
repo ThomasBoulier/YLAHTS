@@ -1,5 +1,6 @@
 import fsm
 import sys
+import side
 sys.path.append(r"c:\Python34\Lib\site-packages")
 sys.path.append(r"c:\Python34\Lib")
 import serial, os, threading
@@ -24,12 +25,16 @@ def decollage():
 
 def exploration():
     print "turn until detect"
-    if () : 
-        nextEvent = "atterrissage d'urgence" 
-    elif () :
-        nextEvent = "objet detecte"
-    else ():
-        nextEvent = "retour point de depart"
+    nextEvent = "RAS"
+    while nextEvent =! "RAS"
+        if (Script.getParam("battery_remaining") < 0.15) : 
+            nextEvent = "atterrissage d'urgence" 
+        elif (side.IsThereAnObject()) :
+            nextEvent = "objet detecte"
+        elif (Script.getParam("battery_remaining") < 0.30):
+            nextEvent = "retour point de depart"
+        else
+            nextEvent = "RAS"
     return nextEvent
     
 def objetDetecte():
