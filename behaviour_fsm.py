@@ -40,9 +40,14 @@ def exploration():
 def objetDetecte():
     print "do something ..."
     Script.ChangeMode(LOITER)
-    if ():
+    inTheLoop = True
+    while(inTheLoop)
+    ask = input("Confirmez s'il y a un nid devant le drone\n y/n")
+    if (ask=="y"):
+        inTheLoop = False
         nextEvent = "confirmation manuelle"
-    else ():
+    if (ask=="n"):
+        inTheLoop = False
         nextEvent = "infirmation manuelle"
     return nextEvent
 
