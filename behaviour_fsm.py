@@ -41,7 +41,7 @@ def objetDetecte():
     print "do something ..."
     Script.ChangeMode(LOITER)
     inTheLoop = True
-    while(inTheLoop)
+    while inTheLoop
     ask = input("Confirmez s'il y a un nid devant le drone\n y/n")
     if (ask=="y"):
         inTheLoop = False
